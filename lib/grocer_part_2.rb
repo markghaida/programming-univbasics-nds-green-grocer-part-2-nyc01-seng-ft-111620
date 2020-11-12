@@ -38,7 +38,7 @@ def checkout(cart, coupons)
     binding.pry
       applied_discounts.each do |discount_item|
           grand_total = grand_total + discount_item[:price] * discount_item[:count]
-      #   coupons.each do |coupon|
+            binding.pry
 # end 
 # end 
 end
