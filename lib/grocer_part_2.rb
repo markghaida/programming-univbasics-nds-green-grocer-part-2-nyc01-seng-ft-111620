@@ -30,15 +30,7 @@ end
 
 def checkout(cart, coupons)
   
-  # Consult README for inputs and outputls
-  #
-  # This method should call
-  # * consolidate_cart
-  # * apply_coupons
-  # * apply_clearance
-  #
-  # BEFORE it begins the work of calculating the total (or else you might have
-  # some irritated customers
+  
 
     consolidated_cart = consolidate_cart(cart)
 
@@ -52,3 +44,21 @@ def checkout(cart, coupons)
 # end 
 # end 
 end
+
+
+
+
+
+
+
+
+
+# Consult README for inputs and outputls
+  #
+  # This method should call
+  # * consolidate_cart
+  # * apply_coupons
+  # * apply_clearance
+  #
+  # BEFORE it begins the work of calculating the total (or else you might have
+  # some irritated customers
