@@ -29,7 +29,7 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-  binding.ory
+  binding.pry
   
 
     consolidated_cart = consolidate_cart(cart)
