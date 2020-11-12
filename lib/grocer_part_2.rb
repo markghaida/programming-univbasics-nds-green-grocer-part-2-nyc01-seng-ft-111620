@@ -27,8 +27,9 @@ def apply_clearance(cart)
     end 
   end 
 end
-grand_total = 0
+
 def checkout(cart, coupons)
+  grand_total = 0
   # binding.pry
     consolidated_cart = consolidate_cart(cart)
     # binding.pry
