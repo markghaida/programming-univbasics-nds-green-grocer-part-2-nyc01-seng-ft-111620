@@ -30,15 +30,11 @@ end
 
 def checkout(cart, coupons)
   grand_total = 0
-  # binding.pry
+ 
     consolidated_cart = consolidate_cart(cart)
-    # binding.pry
     applied_coupons = apply_coupons(consolidated_cart, coupons)
-    # binding.pry 
     applied_discounts = apply_clearance(consolidated_cart)
-    # binding.pry
       applied_discounts.each do |discount_item|
-        # binding.pry
           grand_total = grand_total + discount_item[:price] * discount_item[:count]
             #binding.pry
       end   
