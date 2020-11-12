@@ -40,15 +40,17 @@ def checkout(cart, coupons)
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
   
-  cart.each do |cart_item|
-    coupons.each do |coupon|
+  
       
-      consolidated_cart = consolidate_cart(cart)
+    consolidated_cart = consolidate_cart(cart)
 
-      applied_coupons = apply_coupons(cart, coupons)
+    applied_coupons = apply_coupons(cart, coupons)
 
-      applied_discounts = apply_clearance(cart)
-
+    applied_discounts = apply_clearance(cart)
+      
+      cart.each do |cart_item|
+    
+        coupons.each do |coupon|
 end 
 end 
 end
