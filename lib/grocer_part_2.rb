@@ -27,7 +27,7 @@ def apply_clearance(cart)
     end 
   end 
 end
-
+grand_total = 0
 def checkout(cart, coupons)
   binding.pry
     consolidated_cart = consolidate_cart(cart)
@@ -37,7 +37,7 @@ def checkout(cart, coupons)
     applied_discounts = apply_clearance(consolidated_cart)
     binding.pry
       applied_discounts.each do |discount_item|
-    
+          discount_item[:price]
       #   coupons.each do |coupon|
 # end 
 # end 
