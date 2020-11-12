@@ -36,14 +36,11 @@ def checkout(cart, coupons)
     applied_discounts = apply_clearance(consolidated_cart)
       applied_discounts.each do |discount_item|
           grand_total = grand_total + discount_item[:price] * discount_item[:count]
-            #binding.pry
       end   
       if grand_total >= 100 
         grand_total = grand_total - (grand_total * 0.10)
       end 
-      #binding.pry
       grand_total
-# end 
 end
 
 
