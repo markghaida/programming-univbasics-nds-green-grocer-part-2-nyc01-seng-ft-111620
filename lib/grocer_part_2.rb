@@ -42,7 +42,7 @@ def checkout(cart, coupons)
 
     consolidated_cart = consolidate_cart(cart)
 
-    applied_coupons = apply_coupons(cart, coupons)
+    applied_coupons = apply_coupons(consolidated_cart, coupons)
 
     applied_discounts = apply_clearance(cart)
       
