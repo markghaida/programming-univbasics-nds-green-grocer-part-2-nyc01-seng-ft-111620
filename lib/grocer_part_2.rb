@@ -40,7 +40,7 @@ def checkout(cart, coupons)
       applied_discounts.each do |discount_item|
         # binding.pry
           grand_total = grand_total + discount_item[:price] * discount_item[:count]
-            binding.pry
+            #binding.pry
       end   
       if grand_total >= 100 
         grand_total = grand_total - (grand_total * 0.10)
