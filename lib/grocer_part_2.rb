@@ -30,14 +30,12 @@ end
 
 def checkout(cart, coupons)
   binding.pry
-  
-
     consolidated_cart = consolidate_cart(cart)
-
+    binding.pry
     applied_coupons = apply_coupons(consolidated_cart, coupons)
-
+    binding.pry 
     applied_discounts = apply_clearance(consolidated_cart)
-      
+    binding.pry
       # cart.each do |cart_item|
     
       #   coupons.each do |coupon|
