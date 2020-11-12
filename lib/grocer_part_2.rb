@@ -45,6 +45,7 @@ def checkout(cart, coupons)
       if grand_total >= 100 
         grand_total = grand_total - (grand_total * 0.10)
       end 
+      binding.pry
       grand_total
 # end 
 end
