@@ -29,7 +29,6 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-  cart.each do |cart_item|
     #binding.pry
     coupons.each do |coupon|
       #binding.pry
@@ -42,6 +41,8 @@ def checkout(cart, coupons)
   #
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
+  
+  
   consolidate_cart(cart)
   #binding.pry
   apply_coupons(cart, coupons)
