@@ -1,19 +1,56 @@
 require_relative './part_1_solution.rb'
+require 'pry'
 
 def apply_coupons(cart, coupons)
-  # Consult README for inputs and outputs
-  #
-  # REMEMBER: This method **should** update cart
+  coupons.each do |coupon|
+    current_item = find_item_by_name_in_collection(coupon[:item], cart)
+    if current_item && current_item[:count] >= coupon[:num]
+        cart << {:item => current_item[:item] + " W/COUPON", :price => coupon[:cost]/coupon[:num], 
+        :clearance => current_item[:clearance], :count => coupon[:num]
+        }
+        current_item[:count] -= coupon[:num]
+    end
+  end
+  cart
 end
 
+
 def apply_clearance(cart)
+   #binding.pry
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
+  cart.each do |cart_item| 
+    #.pry
+    if cart_item[:clearance] == true 
+      cart_item[:price] = cart_item[:price] - (cart_item[:price] * 0.20) 
+    end 
+  end 
 end
 
 def checkout(cart, coupons)
-  # Consult README for inputs and outputs
+  grand_total = 0
+    consolidated_cart = consolidate_cart(cart)
+    applied_coupons = apply_coupons(consolidated_cart, coupons)
+    applied_discounts = apply_clearance(consolidated_cart)
+      applied_discounts.each do |discount_item|
+          grand_total = grand_total + discount_item[:price] * discount_item[:count]
+      end   
+      if grand_total >= 100 
+        grand_total = grand_total - (grand_total * 0.10)
+      end 
+    grand_total
+end
+
+
+
+
+
+
+
+
+
+# Consult README for inputs and outputls
   #
   # This method should call
   # * consolidate_cart
@@ -22,4 +59,3 @@ def checkout(cart, coupons)
   #
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
-end
