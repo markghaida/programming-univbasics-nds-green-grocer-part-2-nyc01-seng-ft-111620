@@ -42,10 +42,11 @@ def checkout(cart, coupons)
   
   cart.each do |cart_item|
     coupons.each do |coupon|
+      
   consolidate_cart(cart)
-  #binding.pry
+
   apply_coupons(cart, coupons)
-  #binding.pry
+
   apply_clearance(cart)
   # binding.pry
 end 
